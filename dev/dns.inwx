@@ -1,0 +1,17 @@
+provider "inwx" {
+  username = "${var.inwx_username}"
+  password = "${var.inwx_password}"
+  sandbox  = "${var.inwx_sandbox}" // default is false
+  tan      = "${var.inwx_tan}"     // if 2-Factor authentication is enabled for your INWX account
+}
+
+// Example record
+resource "inwx_record" "example" {
+  domain   = "example.com"
+  name     = ""
+  type     = "MX"
+  value    = "mx.example.com"
+  ttl      = 3600
+  priority = 10
+}
+
